@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.dashboard-container {
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+}
+.dashboard-nav {
+    width: 60px;
+    background-color: #1d4ed8;
+    color: white;
+    padding: 20px 0;
+    border-radius: 0 10px 10px 0;
+    list-style: none;
+    transition: width 0.3s ease;
+    position: relative;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+.dashboard-nav.nav-open {
+    width: 250px;
+}
+.dashboard-nav-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 20px 20px 20px;
+    transition: transform 0.3s ease;
+    display: block;
+}
+.dashboard-nav.nav-open .dashboard-nav-icon {
+    transform: rotate(90deg);
+}
+.nav-menu {
+    list-style: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.1s;
+}
+.dashboard-nav.nav-open .nav-menu {
+    opacity: 1;
+}
+.nav-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-icon {
+    font-size: 16px;
+    min-width: 16px;
+}
+.nav-menu li:hover {
+    background-color: #2563eb;
+    color: white;
+    border-left-color: #60a5fa;
+    transform: translateX(5px);
+}
+.nav-menu li:active {
+    background-color: #1d4ed8;
+    color: white;
+}
+main {
+    flex: 1;
+    padding: 40px;
+    color: white;
+}
+main .dashboard-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #1d4ed8;
+}
+
+.dashboard-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    padding: 2rem 1.5rem;
+}
+
+.top_patients{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    padding: 2rem 1.5rem;
+    margin-top: 20px;
+}
+
+.patient_info{
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-evenly; */
+    gap: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffe066;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    background:#1d4ed8;
+    border-radius: 18px;
+}
+.patient_info_content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.total-patients,
+.total-appointments,
+.total_revenue,
+.Completed_appointments {
+    background: #1d4ed8;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.total-patients:hover,
+.total-appointments:hover,
+.total_revenue:hover,
+.Completed_appointments:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.total-patients h2,
+.total-appointments h2,
+.total_revenue h2,
+.Completed_appointments h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+.total-patients p,
+.total-appointments p,
+.total_revenue p,
+.Completed_appointments p {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fbbf24;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+.top_patients h2 {
+    color: #1d4ed8; 
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.top_patients_p{
+    color: #1d4ed8;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.patient_info_content_p ,
+.patient_info_content_p{
+    color:  white;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.upcoming_appointments{
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+
+}
+
+.upcoming_appointments h2{
+    color: #1d4ed8;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+
+.upcoming_appointments_content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #1d4ed8;
+    border-radius: 18px;
+    padding: 1rem 1.5rem;
+    margin-top: 20px;
+   
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+}
+.upcoming_appointments_content p{
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+.upcoming_appointments p{
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .dashboard-nav {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 10px 0;
+        position: relative;
+    }
+    
+    .dashboard-nav.nav-open {
+        width: 100%;
+        height: auto;
+    }
+    
+    .dashboard-nav-icon {
+        margin: 0 15px 10px 15px;
+        font-size: 18px;
+    }
+    
+    .nav-menu {
+        opacity: 0;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 0 10px;
+        transition: opacity 0.3s ease;
+    }
+    
+    .dashboard-nav.nav-open .nav-menu {
+        opacity: 1;
+        display: flex;
+    }
+    
+    .nav-menu li {
+        padding: 10px 15px;
+        font-size: 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-menu li:hover {
+        background-color: #2563eb;
+        transform: none;
+    }
+    
+    main {
+        padding: 20px;
+        flex: 1;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #1d4ed8;
+    }
+    
+    .dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .total-patients,
+    .total-appointments,
+    .total_revenue,
+    .Completed_appointments {
+        padding: 20px;
+    }
+    
+    .total-patients h2,
+    .total-appointments h2,
+    .total_revenue h2,
+    .Completed_appointments h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .total-patients p,
+    .total-appointments p,
+    .total_revenue p,
+    .Completed_appointments p {
+        font-size: 1.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        word-break: break-all;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .dashboard-nav {
+        padding: 8px 0;
+    }
+    
+    .dashboard-nav-icon {
+        margin: 0 10px 8px 10px;
+        font-size: 16px;
+    }
+    
+    .nav-menu {
+        padding: 0 5px;
+        gap: 3px;
+    }
+    
+    .nav-menu li {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .dashboard-content {
+        gap: 12px;
+    }
+    
+    .total-patients,
+    .total-appointments,
+    .total_revenue,
+    .Completed_appointments {
+        padding: 15px;
+    }
+    
+    .total-patients h2,
+    .total-appointments h2,
+    .total_revenue h2,
+    .Completed_appointments h2 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .total-patients p,
+    .total-appointments p,
+    .total_revenue p,
+    .Completed_appointments p {
+        font-size: 1.8rem;
+    }
+}
+
+

@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.appointment_card_item_button{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.appointments_page_container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.appointments_page_title {
+    color: #1d4ed8;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.appointments_container {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    padding: 2rem 2.5rem;
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.appointment_card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.appointment_card_item button{
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+}
+.appointment_card_item button:hover{
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.appointment_card_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #c7d2fe;
+    border-radius: 18px;
+    padding: 20px;
+    width: 300px;
+    min-height: 320px;
+    max-height: 420px;
+    background: white;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+}
+.appointment_card_item:hover {
+    box-shadow: 0 10px 25px rgba(29, 78, 216, 0.15);
+    border-color: #1d4ed8;
+}
+.appointment_card_item_content {
+    width: 100%;
+    overflow-y: auto;
+    flex: 1;
+}
+.appointment_card_item p {
+    color: #374151;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.appointment_card_item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}                   
+.add_appointment_button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.add_appointment_button:hover {
+    background: #2563eb;
+}
+.add_appointment_form {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.08);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add_appointment_form h2 {
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+}
+.add_appointment_form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.add_appointment_form input, .add_appointment_form select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+.add_appointment_form input:focus, .add_appointment_form select:focus {
+    border: 1.5px solid #1d4ed8;
+}
+.add_appointment_form_buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+.add_appointment_form button {
+    background: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.add_appointment_form button:hover {
+    background: #2563eb;
+}
+.appointments_container input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c7d2fe;
+    margin-bottom: 20px;
+}
+.appointments_container input::placeholder{
+    color: #3461dc;
+}
+main h1{
+    color: #1d4ed8;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.add_appointment_form input[type="file"] {
+    margin-top: 10px;
+}
+
+
+@media (max-width: 700px) {
+    .appointments_container {
+        padding: 1rem 0.5rem;
+    }
+    .add_appointment_form {
+        padding: 1rem 0.5rem;
+        max-width: 98vw;
+    }
+}
+
+/* .dashboard-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+} */
+
+.appointments-dashboard-container {
+    background: white;
+}
+
+.dashboard-container,
+.appointments-dashboard-container {
+    background: white;
+} 
+
+/* File upload section styles */
+.file-upload-section {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%;
+    overflow: hidden;
+}
+
+.file-upload-section p {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.file-upload-section input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    color: #000;
+    font-size: 14px;
+}
+
+.existing-files-section {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.existing-files-section ul {
+    padding-left: 18px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.existing-files-section li {
+    margin-bottom: 10px;
+    color: #000;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+.existing-files-section span {
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.preview-section {
+    margin-top: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mobile-download-section {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.mobile-download-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    text-align: center;
+}
+
+.preview-iframe {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+}
+
+.preview-image {
+    width: 200px;
+    height: auto;
+    margin-top: 5px;
+    max-width: 100%;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 700px) {
+    .appointments_container {
+        padding: 1rem 0.5rem;
+    }
+    .add_appointment_form {
+        padding: 1rem 0.5rem;
+        max-width: 98vw;
+    }
+    
+    .appointment_card_item {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .appointment_card_item_content {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .appointment_card_item_content input,
+    .appointment_card_item_content select {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .file-upload-section {
+        padding: 8px;
+        margin-top: 10px;
+    }
+    
+    .file-upload-section input[type="file"] {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 5px;
+    }
+    
+    .existing-files-section ul {
+        padding-left: 15px;
+    }
+    
+    .existing-files-section li {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    .mobile-download-button {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    
+    .preview-iframe {
+        height: 300px;
+    }
+    
+    .preview-image {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .appointment_card_item_button {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+    
+    .appointment_card_item_button button {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .appointment_card_item {
+        width: 98%;
+        padding: 10px;
+    }
+    
+    .file-upload-section {
+        padding: 5px;
+    }
+    
+    .existing-files-section ul {
+        padding-left: 10px;
+    }
+    
+    .preview-iframe {
+        height: 250px;
+    }
+} 
+
